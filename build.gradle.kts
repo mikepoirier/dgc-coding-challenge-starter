@@ -1,7 +1,7 @@
 import org.jetbrains.kotlin.gradle.tasks.KotlinCompile
 
 buildscript {
-    val kotlinVersion = "1.1.4-2"
+    val kotlinVersion = "1.1.51"
     val springBootVersion = "2.0.0.M2"
 
     extra["kotlinVersion"] = kotlinVersion
