@@ -1,59 +1,61 @@
 import org.jetbrains.kotlin.gradle.tasks.KotlinCompile
 
+val kotlinVersion = "1.2.30"
 buildscript {
-    val kotlinVersion = "1.1.51"
-    val springBootVersion = "2.0.0.M2"
-
-    extra["kotlinVersion"] = kotlinVersion
-
     repositories {
         mavenCentral()
-        maven { url = uri("https://repo.spring.io/snapshot") }
-        maven { url = uri("https://repo.spring.io/milestone") }
     }
 
     dependencies {
-        classpath("org.springframework.boot:spring-boot-gradle-plugin:$springBootVersion")
-        classpath("org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlinVersion")
-        classpath("org.jetbrains.kotlin:kotlin-allopen:$kotlinVersion")
+        classpath("org.springframework.boot:spring-boot-gradle-plugin:2.0.0.RELEASE")
+        classpath("org.junit.platform:junit-platform-gradle-plugin:1.0.2")
     }
 }
 
 apply {
-    plugin("kotlin")
-    plugin("kotlin-spring")
     plugin("org.springframework.boot")
-    plugin("io.spring.dependency-management")
+    plugin("org.junit.platform.gradle.plugin")
 }
 
-configure<JavaPluginConvention> {
-    setSourceCompatibility(1.8)
-    setTargetCompatibility(1.8)
+plugins {
+    val kotlinVersion = "1.2.30"
+    id("org.jetbrains.kotlin.jvm") version kotlinVersion
+    id("org.jetbrains.kotlin.plugin.spring") version kotlinVersion
+    id("org.jetbrains.kotlin.plugin.jpa") version kotlinVersion
+    id("io.spring.dependency-management") version "1.0.3.RELEASE"
+}
+
+version = "1.0.0-SNAPSHOT"
+
+tasks {
+    withType<KotlinCompile> {
+        kotlinOptions {
+            jvmTarget = "1.8"
+            freeCompilerArgs = listOf("-Xjsr305=strict")
+        }
+    }
 }
 
 repositories {
     mavenCentral()
-    maven { url = uri("https://repo.spring.io/snapshot") }
-    maven { url = uri("https://repo.spring.io/milestone") }
 }
 
-val kotlinVersion = extra["kotlinVersion"]
+val mockkVersion = "1.6"
+val hamkrestVersion = "1.4.2.2"
 
 dependencies {
     compile("org.springframework.boot:spring-boot-starter-actuator")
-    compile("org.springframework.boot:spring-boot-actuator-docs")
     compile("org.springframework.boot:spring-boot-starter-webflux")
-    compile("org.jetbrains.kotlin:kotlin-stdlib-jre8:$kotlinVersion")
-    compile("org.jetbrains.kotlin:kotlin-reflect:$kotlinVersion")
-    compile("com.fasterxml.jackson.module:jackson-module-kotlin:2.8.7")
+    compile("org.jetbrains.kotlin:kotlin-stdlib-jdk8")
+    compile("org.jetbrains.kotlin:kotlin-reflect")
+    compile("com.fasterxml.jackson.module:jackson-module-kotlin")
     runtime("org.springframework.boot:spring-boot-devtools")
-    compileOnly("org.springframework.boot:spring-boot-configuration-processor")
-    testCompile("org.springframework.boot:spring-boot-starter-test")
-}
-
-tasks.withType(KotlinCompile::class.java).all {
-    dependsOn("processResources")
-    kotlinOptions {
-        jvmTarget = "1.8"
+    testCompile("org.springframework.boot:spring-boot-starter-test"){
+        exclude(module = "junit")
     }
+    testCompile("org.junit.jupiter:junit-jupiter-api")
+    testCompile("com.natpryce:hamkrest:$hamkrestVersion")
+    testCompile("io.mockk:mockk:$mockkVersion")
+    testCompile("io.projectreactor:reactor-test")
+    testRuntime("org.junit.jupiter:junit-jupiter-engine")
 }

@@ -3,4 +3,8 @@ package io.mikepoirier
 import org.springframework.http.HttpStatus
 
 
-data class WebException(val errorCode: HttpStatus, val body: Any = mapOf(Pair("message", "Something broke..."))) : Throwable("Return Error Code: $errorCode with body $body")
+data class WebException(
+    override val message: String,
+    val errorCode: HttpStatus,
+    val body: Any = mapOf(Pair("message", message))
+) : Throwable(message)

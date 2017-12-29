@@ -1,0 +1,117 @@
+Gradle now uses separate output directories for each JVM language, but this build assumes a single directory for all classes from a source set. This behaviour has been deprecated and is scheduled to be removed in Gradle 5.0
+:compileKotlin UP-TO-DATE
+:compileJava NO-SOURCE
+:compileScala NO-SOURCE
+:processResources UP-TO-DATE
+:classes UP-TO-DATE
+:compileTestKotlin UP-TO-DATE
+:compileTestJava NO-SOURCE
+:compileTestScala NO-SOURCE
+:processTestResources NO-SOURCE
+:testClasses UP-TO-DATE
+:compileGatlingKotlin NO-SOURCE
+:compileGatlingJava NO-SOURCE
+:compileGatlingScala UP-TO-DATE
+:processGatlingResources NO-SOURCE
+:gatlingClasses UP-TO-DATE
+:gatlingRun
+17:18:32.999 [GatlingSystem-akka.actor.default-dispatcher-4] INFO akka.event.slf4j.Slf4jLogger - Slf4jLogger started
+17:18:33.080 [GatlingSystem-akka.actor.default-dispatcher-2] INFO io.gatling.core.stats.writer.LogFileDataWriter - Initializing
+17:18:33.080 [GatlingSystem-akka.actor.default-dispatcher-3] INFO io.gatling.core.stats.writer.ConsoleDataWriter - Initializing
+17:18:33.084 [GatlingSystem-akka.actor.default-dispatcher-3] INFO io.gatling.core.stats.writer.ConsoleDataWriter - Initialized
+17:18:33.090 [GatlingSystem-akka.actor.default-dispatcher-2] INFO io.gatling.core.stats.writer.LogFileDataWriter - Initialized
+17:18:33.107 [main] DEBUG io.netty.channel.MultithreadEventLoopGroup - -Dio.netty.eventLoopThreads: 16
+17:18:33.125 [main] DEBUG io.netty.util.internal.PlatformDependent0 - -Dio.netty.noUnsafe: false
+17:18:33.125 [main] DEBUG io.netty.util.internal.PlatformDependent0 - Java version: 8
+17:18:33.126 [main] DEBUG io.netty.util.internal.PlatformDependent0 - sun.misc.Unsafe.theUnsafe: available
+17:18:33.126 [main] DEBUG io.netty.util.internal.PlatformDependent0 - sun.misc.Unsafe.copyMemory: available
+17:18:33.126 [main] DEBUG io.netty.util.internal.PlatformDependent0 - java.nio.Buffer.address: available
+17:18:33.126 [main] DEBUG io.netty.util.internal.PlatformDependent0 - direct buffer constructor: available
+17:18:33.127 [main] DEBUG io.netty.util.internal.PlatformDependent0 - java.nio.Bits.unaligned: available, true
+17:18:33.127 [main] DEBUG io.netty.util.internal.PlatformDependent0 - jdk.internal.misc.Unsafe.allocateUninitializedArray(int): unavailable prior to Java9
+17:18:33.127 [main] DEBUG io.netty.util.internal.PlatformDependent0 - java.nio.DirectByteBuffer.<init>(long, int): available
+17:18:33.127 [main] DEBUG io.netty.util.internal.PlatformDependent - sun.misc.Unsafe: available
+17:18:33.127 [main] DEBUG io.netty.util.internal.PlatformDependent - -Dio.netty.tmpdir: /tmp (java.io.tmpdir)
+17:18:33.127 [main] DEBUG io.netty.util.internal.PlatformDependent - -Dio.netty.bitMode: 64 (sun.arch.data.model)
+17:18:33.128 [main] DEBUG io.netty.util.internal.PlatformDependent - -Dio.netty.noPreferDirect: false
+17:18:33.128 [main] DEBUG io.netty.util.internal.PlatformDependent - -Dio.netty.maxDirectMemory: 526385152 bytes
+17:18:33.128 [main] DEBUG io.netty.util.internal.PlatformDependent - -Dio.netty.uninitializedArrayAllocationThreshold: -1
+17:18:33.129 [main] DEBUG io.netty.util.internal.CleanerJava6 - java.nio.ByteBuffer.cleaner(): available
+17:18:33.140 [main] DEBUG io.netty.channel.nio.NioEventLoop - -Dio.netty.noKeySetOptimization: false
+17:18:33.140 [main] DEBUG io.netty.channel.nio.NioEventLoop - -Dio.netty.selectorAutoRebuildThreshold: 512
+17:18:33.147 [main] DEBUG io.netty.util.internal.PlatformDependent - org.jctools-core.MpscChunkedArrayQueue: available
+17:18:33.157 [main] DEBUG io.netty.util.ResourceLeakDetector - -Dio.netty.leakDetection.level: simple
+17:18:33.157 [main] DEBUG io.netty.util.ResourceLeakDetector - -Dio.netty.leakDetection.targetRecords: 4
+17:18:33.159 [main] DEBUG io.netty.util.ResourceLeakDetectorFactory - Loaded default ResourceLeakDetector: io.netty.util.ResourceLeakDetector@5812f68b
+17:18:33.185 [main] DEBUG io.netty.util.internal.InternalThreadLocalMap - -Dio.netty.threadLocalMap.stringBuilder.initialSize: 1024
+17:18:33.185 [main] DEBUG io.netty.util.internal.InternalThreadLocalMap - -Dio.netty.threadLocalMap.stringBuilder.maxSize: 4096
+17:18:33.199 [main] DEBUG io.netty.handler.ssl.JdkSslContext - Default protocols (JDK): [TLSv1.2, TLSv1.1, TLSv1] 
+17:18:33.199 [main] DEBUG io.netty.handler.ssl.JdkSslContext - Default cipher suites (JDK): [TLS_ECDHE_ECDSA_WITH_AES_256_GCM_SHA384, TLS_ECDHE_ECDSA_WITH_AES_128_GCM_SHA256, TLS_ECDHE_RSA_WITH_AES_128_GCM_SHA256, TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA, TLS_ECDHE_RSA_WITH_AES_256_CBC_SHA, TLS_RSA_WITH_AES_128_GCM_SHA256, TLS_RSA_WITH_AES_128_CBC_SHA, TLS_RSA_WITH_AES_256_CBC_SHA]
+17:18:33.223 [main] DEBUG io.netty.buffer.PooledByteBufAllocator - -Dio.netty.allocator.numHeapArenas: 5
+17:18:33.223 [main] DEBUG io.netty.buffer.PooledByteBufAllocator - -Dio.netty.allocator.numDirectArenas: 5
+17:18:33.223 [main] DEBUG io.netty.buffer.PooledByteBufAllocator - -Dio.netty.allocator.pageSize: 8192
+17:18:33.223 [main] DEBUG io.netty.buffer.PooledByteBufAllocator - -Dio.netty.allocator.maxOrder: 11
+17:18:33.223 [main] DEBUG io.netty.buffer.PooledByteBufAllocator - -Dio.netty.allocator.chunkSize: 16777216
+17:18:33.223 [main] DEBUG io.netty.buffer.PooledByteBufAllocator - -Dio.netty.allocator.tinyCacheSize: 512
+17:18:33.223 [main] DEBUG io.netty.buffer.PooledByteBufAllocator - -Dio.netty.allocator.smallCacheSize: 256
+17:18:33.223 [main] DEBUG io.netty.buffer.PooledByteBufAllocator - -Dio.netty.allocator.normalCacheSize: 64
+17:18:33.223 [main] DEBUG io.netty.buffer.PooledByteBufAllocator - -Dio.netty.allocator.maxCachedBufferCapacity: 32768
+17:18:33.223 [main] DEBUG io.netty.buffer.PooledByteBufAllocator - -Dio.netty.allocator.cacheTrimInterval: 8192
+17:18:33.223 [main] DEBUG io.netty.buffer.PooledByteBufAllocator - -Dio.netty.allocator.useCacheForAllThreads: true
+17:18:33.260 [main] INFO io.gatling.http.ahc.HttpEngine - Start warm up
+17:18:33.282 [main] DEBUG io.netty.buffer.AbstractByteBuf - -Dio.netty.buffer.bytebuf.checkAccessible: true
+17:18:33.283 [main] DEBUG io.netty.util.ResourceLeakDetectorFactory - Loaded default ResourceLeakDetector: io.netty.util.ResourceLeakDetector@73dce0e6
+Exception in thread "main" java.lang.NoSuchMethodError: io.netty.util.internal.PlatformDependent.newAtomicIntegerFieldUpdater(Ljava/lang/Class;Ljava/lang/String;)Ljava/util/concurrent/atomic/AtomicIntegerFieldUpdater;
+	at org.asynchttpclient.netty.NettyResponseFuture.<clinit>(NettyResponseFuture.java:56)
+	at org.asynchttpclient.netty.request.NettyRequestSender.newNettyResponseFuture(NettyRequestSender.java:303)
+	at org.asynchttpclient.netty.request.NettyRequestSender.newNettyRequestAndResponseFuture(NettyRequestSender.java:192)
+	at org.asynchttpclient.netty.request.NettyRequestSender.sendRequestWithCertainForceConnect(NettyRequestSender.java:129)
+	at org.asynchttpclient.netty.request.NettyRequestSender.sendRequest(NettyRequestSender.java:107)
+	at org.asynchttpclient.DefaultAsyncHttpClient.execute(DefaultAsyncHttpClient.java:209)
+	at org.asynchttpclient.DefaultAsyncHttpClient.executeRequest(DefaultAsyncHttpClient.java:177)
+	at org.asynchttpclient.DefaultAsyncHttpClient.executeRequest(DefaultAsyncHttpClient.java:199)
+	at io.gatling.http.ahc.HttpEngine.warmpUp(HttpEngine.scala:96)
+	at io.gatling.http.protocol.HttpProtocol$$anon$1.io$gatling$http$protocol$HttpProtocol$$anon$1$$$anonfun$1(HttpProtocol.scala:62)
+	at io.gatling.http.protocol.HttpProtocol$$nestedInAnon$1$lambda$$newComponents$1.apply(HttpProtocol.scala:54)
+	at io.gatling.http.protocol.HttpProtocol$$nestedInAnon$1$lambda$$newComponents$1.apply(HttpProtocol.scala:54)
+	at io.gatling.core.protocol.ProtocolComponentsRegistry.comps$1(Protocol.scala:59)
+	at io.gatling.core.protocol.ProtocolComponentsRegistry.io$gatling$core$protocol$ProtocolComponentsRegistry$$$anonfun$4(Protocol.scala:61)
+	at io.gatling.core.protocol.ProtocolComponentsRegistry$lambda$$components$1.apply(Protocol.scala:61)
+	at scala.collection.mutable.MapLike$class.getOrElseUpdate(MapLike.scala:194)
+	at scala.collection.mutable.AbstractMap.getOrElseUpdate(Map.scala:80)
+	at io.gatling.core.protocol.ProtocolComponentsRegistry.components(Protocol.scala:61)
+	at io.gatling.http.action.HttpActionBuilder.lookUpHttpComponents(HttpActionBuilder.scala:25)
+	at io.gatling.http.action.sync.HttpRequestActionBuilder.build(HttpRequestActionBuilder.scala:33)
+	at io.gatling.core.structure.StructureBuilder$class.io$gatling$core$structure$StructureBuilder$class$$$anonfun$1(StructureBuilder.scala:34)
+	at io.gatling.core.structure.StructureBuilder$class$lambda$$build$1.apply(StructureBuilder.scala:33)
+	at io.gatling.core.structure.StructureBuilder$class$lambda$$build$1.apply(StructureBuilder.scala:33)
+	at scala.collection.LinearSeqOptimized$class.foldLeft(LinearSeqOptimized.scala:124)
+	at scala.collection.immutable.List.foldLeft(List.scala:84)
+	at io.gatling.core.structure.StructureBuilder$class.build(StructureBuilder.scala:33)
+	at io.gatling.core.structure.ScenarioBuilder.build(ScenarioBuilder.scala:38)
+	at io.gatling.core.structure.PopulationBuilder.build(ScenarioBuilder.scala:101)
+	at io.gatling.core.scenario.SimulationParams.io$gatling$core$scenario$SimulationParams$$$anonfun$13(Simulation.scala:169)
+	at io.gatling.core.scenario.SimulationParams$lambda$$scenarios$1.apply(Simulation.scala:169)
+	at io.gatling.core.scenario.SimulationParams$lambda$$scenarios$1.apply(Simulation.scala:169)
+	at scala.collection.immutable.List.map(List.scala:273)
+	at io.gatling.core.scenario.SimulationParams.scenarios(Simulation.scala:169)
+	at io.gatling.app.Gatling.run(Gatling.scala:102)
+	at io.gatling.app.Gatling.runIfNecessary(Gatling.scala:75)
+	at io.gatling.app.Gatling.start(Gatling.scala:65)
+	at io.gatling.app.Gatling$.start(Gatling.scala:57)
+	at io.gatling.app.Gatling$.fromArgs(Gatling.scala:49)
+	at io.gatling.app.Gatling$.main(Gatling.scala:43)
+	at io.gatling.app.Gatling.main(Gatling.scala)
+:gatlingRun FAILED
+
+FAILURE: Build failed with an exception.
+
+* What went wrong:
+Execution failed for task ':gatlingRun'.
+> Process 'command '/usr/lib/jvm/java-8-openjdk/bin/java'' finished with non-zero exit value 1
+
+* Try:
+Run with --stacktrace option to get the stack trace. Run with --info or --debug option to get more log output.
+
+BUILD FAILED in 2s
+5 actionable tasks: 1 executed, 4 up-to-date
